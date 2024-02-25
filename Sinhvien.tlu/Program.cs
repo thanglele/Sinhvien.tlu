@@ -64,7 +64,7 @@ namespace Sinhvien.tlu
             }
             catch (Exception)
             {
-                MessageBox.Show("Mất kết nối với internet, yêu cầu kiểm tra lại.");
+                MessageBox.Show("Mất kết nối với Internet, kiểm tra lại kết nối và khởi động lại phần mềm.");
             }
         }
     }
