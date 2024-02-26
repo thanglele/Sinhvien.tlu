@@ -15,7 +15,7 @@ namespace Sinhvien.tlu_controlpanel
     {
         //private static string sql_server = "Server=localhost\\THANGLELESV1;Database=sinhvien_tlu;Trusted_Connection=True;";
         //public static string sql_server = "Server=localhost\\THANGLELE_SQL;Database=sinhvien_tlu;Trusted_Connection=True;";
-        private static string sql_server = "Data Source=172.188.28.154;User ID=tluedu_application;Password=LeTh@ng2884;Connect Timeout=30;";
+        private static string sql_server = "Data Source=172.188.28.154;Database=sinhvien_tlu;User ID=tluedu_application;Password=LeTh@ng2884;Connect Timeout=30;";
 
         private const int BUFFER_SIZE = 1024;
         private const int PORT_NUMBER = 49153;
