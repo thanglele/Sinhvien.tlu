@@ -14,13 +14,6 @@ namespace Sinhvien.tlu.Mainboard
     public partial class System_Main : Form
     {
         private Stream stream;
-        public System_Main(Stream current_stream)
-        {
-            stream = current_stream;
-            getInformation();
-
-            InitializeComponent();
-        }
 
         void getInformation()
         {
@@ -31,5 +24,21 @@ namespace Sinhvien.tlu.Mainboard
             writer.WriteLine("MAINBOARD");
         }
 
+        void Exit_Program(object sender, FormClosingEventArgs e)
+        {
+            var writer = new StreamWriter(stream);
+            writer.AutoFlush = true;
+
+            writer.WriteLine("EXIT");
+
+            Application.Exit();
+        }
+        public System_Main(Stream current_stream)
+        {
+            stream = current_stream;
+            getInformation();
+
+            InitializeComponent();
+        }
     }
 }

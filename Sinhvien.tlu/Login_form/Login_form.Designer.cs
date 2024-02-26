@@ -216,7 +216,6 @@
             MaximizeBox = false;
             Name = "System_Login";
             SizeGripStyle = SizeGripStyle.Hide;
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Education | System login";
             ((System.ComponentModel.ISupportInitialize)Logo_thuyloi).EndInit();
             ((System.ComponentModel.ISupportInitialize)login_front).EndInit();

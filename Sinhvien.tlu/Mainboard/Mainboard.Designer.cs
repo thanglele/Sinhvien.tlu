@@ -37,15 +37,17 @@ namespace Sinhvien.tlu.Mainboard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            AutoScroll = true;
             AutoSize = true;
-            ClientSize = new Size(1920, 1040);
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(1904, 1040);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
+            MaximumSize = new Size(1920, 1079);
+            MinimumSize = new Size(1918, 1038);
             Name = "System_Main";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Education | Trang chủ";
             WindowState = FormWindowState.Maximized;
+            FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Exit_Program);
             ResumeLayout(false);
         }
 
