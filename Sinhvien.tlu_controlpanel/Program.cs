@@ -15,13 +15,13 @@ namespace Sinhvien.tlu_controlpanel
     {
         //private static string sql_server = "Server=localhost\\THANGLELESV1;Database=sinhvien_tlu;Trusted_Connection=True;";
         //public static string sql_server = "Server=localhost\\THANGLELE_SQL;Database=sinhvien_tlu;Trusted_Connection=True;";
-        private static string sql_server = "Server=172.188.28.154;Database=sinhvien_tlu;Trusted_Connection=True;";
+        private static string sql_server = "Data Source=172.188.28.154;User ID=tluedu_application;Password=LeTh@ng2884;Connect Timeout=30;";
 
         private const int BUFFER_SIZE = 1024;
         private const int PORT_NUMBER = 49153;
         private const string IP_NUMBER = "10.0.0.5";
         //private const string IP_NUMBER = "127.0.0.1";
-        const int MAXCONNECTION = 500;
+        const int MAXCONNECTION = 100;
         static int MEMCONNECTION = 0;
 
         static ASCIIEncoding encoding = new ASCIIEncoding();
