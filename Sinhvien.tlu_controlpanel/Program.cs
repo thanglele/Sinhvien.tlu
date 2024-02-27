@@ -68,7 +68,7 @@ namespace Sinhvien.tlu_controlpanel
                     connection.Open();
 
                     // Tạo câu lệnh SQL để truy vấn thông tin đăng nhập
-                    string query = "SELECT COUNT(*) FROM login_information WHERE ID = @Username AND Password = @Password";
+                    string query = "SELECT MID FROM login_information WHERE ID = @Username AND Password = @Password";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -77,16 +77,11 @@ namespace Sinhvien.tlu_controlpanel
                         command.Parameters.AddWithValue("@Password", PASS_inp);
 
                         // Thực thi truy vấn và trả về số lượng hàng phù hợp
-                        int count = (int)command.ExecuteScalar();
+                        string MID = Convert.ToString((int)command.ExecuteScalar());
 
-                        if (count > 0)
-                        {
-                            return "1";
-                        }
-                        else
-                        {
-                            return "0";
-                        }
+                        Console.WriteLine("MID: " + MID);
+
+                        return MID;
                     }
                 }
                 catch (Exception)
@@ -125,19 +120,19 @@ namespace Sinhvien.tlu_controlpanel
                         Console.WriteLine("USR:" + USR_inp);
                         Console.WriteLine("PASS:" + PASS_inp);
 
-                        status = login(USR_inp, PASS_inp);
-                        if (status == "1")
+                        string MID = login(USR_inp, PASS_inp);
+                        if (MID == "5" || MID == "0")
+                        {
+                            Console.WriteLine(IP_client + ": Dang nhap that bai, yeu cau dang nhap lai...");
+                        }
+                        else
                         {
                             Console.WriteLine(IP_client + ": Dang nhap thanh cong, bat dau truy xuat thong tin cho Client...");
                             Console.WriteLine("ID dang nhap: " + USR_inp);
                         }
-                        else
-                        {
-                            Console.WriteLine(IP_client + ": Dang nhap that bai, yeu cau dang nhap lai...");
-                        }
 
                         //send
-                        writer.WriteLine(status);
+                        writer.WriteLine(MID);
                     }
 
                     if (status == "MAINBOARD")

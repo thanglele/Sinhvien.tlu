@@ -66,16 +66,44 @@ namespace Sinhvien.tlu.Login_form
             //receive
             static_login_raw = reader.ReadLine();
 
-            if (static_login_raw == "1")
+            switch (static_login_raw)
             {
-                static_login = true;
-                Login_action.Text = "Đang chuyển vào màn hình chính...";
+                case "1":
+                    static_login = true;
+                    Login_action.Text = "Đang chuyển vào màn hình chính...";
+                    MessageBox.Show("Bạn đăng nhập tài khoản Sinh viên.");
 
-                this.Close();
-            }
-            else
-            {
-                Login_action.Text = "Mã sinh viên hoặc mật khẩu không đúng!";
+                    this.Close();
+                    break;
+                case "2":
+                    static_login = true;
+                    Login_action.Text = "Đang chuyển vào màn hình chính...";
+                    MessageBox.Show("Bạn đăng nhập tài khoản Giáo viên.");
+
+                    this.Close();
+                    break;
+                case "3":
+                    static_login = true;
+                    Login_action.Text = "Đang chuyển vào màn hình chính...";
+                    MessageBox.Show("Bạn đăng nhập tài khoản Phòng Đào tạo.");
+
+                    this.Close();
+                    break;
+                case "4":
+                    static_login = true;
+                    Login_action.Text = "Đang chuyển vào màn hình chính...";
+                    MessageBox.Show("Bạn đăng nhập tài khoản phòng Khảo thí.");
+
+                    this.Close();
+                    break;
+                case "5":
+                    static_login = false;
+                    Login_action.Text = "Tài khoản đăng nhập bị cấm!";
+                    MessageBox.Show("Bạn đăng nhập tài khoản bị cấm, hãy liên hệ với phòng Đào tạo.");
+                    break;
+                default:
+                    Login_action.Text = "Mã sinh viên hoặc mật khẩu không đúng!";
+                    break;
             }
         }
 
