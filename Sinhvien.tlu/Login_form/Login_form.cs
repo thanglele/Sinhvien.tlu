@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sinhvien.tlu.Mainboard;
 
 namespace Sinhvien.tlu.Login_form
 {
@@ -18,7 +19,7 @@ namespace Sinhvien.tlu.Login_form
         private string PASS_inp;
 
         private string static_login_raw = "0";
-        private bool static_login = false;
+        //private bool static_login = false;
         private Stream stream;
 
         public System_Login()
@@ -36,12 +37,7 @@ namespace Sinhvien.tlu.Login_form
             Application.Exit();
         }
 
-        public bool getStatic()
-        {
-            return static_login;
-        }
-
-        public void getStream(Stream new_stream)
+        public void setStream(Stream new_stream)
         {
             stream = new_stream;
         }
@@ -69,35 +65,37 @@ namespace Sinhvien.tlu.Login_form
             switch (static_login_raw)
             {
                 case "1":
-                    static_login = true;
+                    //static_login = true;
                     Login_action.Text = "Đang chuyển vào màn hình chính...";
                     MessageBox.Show("Bạn đăng nhập tài khoản Sinh viên.");
+                    this.Hide();
 
-                    this.Close();
+                    System_Main new_main = new System_Main(stream);
+                    new_main.Show();
                     break;
                 case "2":
-                    static_login = true;
+                    //static_login = true;
                     Login_action.Text = "Đang chuyển vào màn hình chính...";
                     MessageBox.Show("Bạn đăng nhập tài khoản Giáo viên.");
+                    this.Hide();
 
-                    this.Close();
                     break;
                 case "3":
-                    static_login = true;
+                    //static_login = true;
                     Login_action.Text = "Đang chuyển vào màn hình chính...";
                     MessageBox.Show("Bạn đăng nhập tài khoản Phòng Đào tạo.");
 
                     this.Close();
                     break;
                 case "4":
-                    static_login = true;
+                    //static_login = true;
                     Login_action.Text = "Đang chuyển vào màn hình chính...";
                     MessageBox.Show("Bạn đăng nhập tài khoản phòng Khảo thí.");
 
                     this.Close();
                     break;
                 case "5":
-                    static_login = false;
+                    //static_login = false;
                     Login_action.Text = "Tài khoản đăng nhập bị cấm!";
                     MessageBox.Show("Bạn đăng nhập tài khoản bị cấm, hãy liên hệ với phòng Đào tạo.");
                     break;

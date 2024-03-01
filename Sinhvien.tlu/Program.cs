@@ -20,27 +20,6 @@ namespace Sinhvien.tlu
         static ASCIIEncoding encoding = new ASCIIEncoding();
 
         [STAThread]
-
-        static public bool login_task(Stream stream)
-        {
-            System_Login New_Login = new System_Login();
-
-            New_Login.getStream(stream);
-            Application.Run(New_Login);
-
-            return New_Login.getStatic();
-
-            //string USR_inp = New_Login.getUSR_inp();
-            //string PASS_inp = New_Login.getPASS_inp();
-        }
-
-        static void main_task(Stream stream)
-        {
-            System_Main New_Main = new System_Main(stream);
-
-            Application.Run(New_Main);
-        }
-
         static public void Main()
         {
             ApplicationConfiguration.Initialize();
@@ -53,10 +32,10 @@ namespace Sinhvien.tlu
                 client.Connect(IP_NUMBER, PORT_NUMBER);
                 Stream stream = client.GetStream();
 
-                if (login_task(stream))
-                {
-                    main_task(stream);
-                }
+                System_Login New_Login = new System_Login();
+
+                New_Login.setStream(stream);
+                Application.Run(New_Login);
 
                 //close
                 stream.Close();
