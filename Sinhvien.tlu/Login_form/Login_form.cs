@@ -67,32 +67,10 @@ namespace Sinhvien.tlu.Login_form
                 case "1":
                     //static_login = true;
                     Login_action.Text = "Đang chuyển vào màn hình chính...";
-                    MessageBox.Show("Bạn đăng nhập tài khoản Sinh viên.");
                     this.Hide();
 
                     System_Main new_main = new System_Main(stream);
                     new_main.Show();
-                    break;
-                case "2":
-                    //static_login = true;
-                    Login_action.Text = "Đang chuyển vào màn hình chính...";
-                    MessageBox.Show("Bạn đăng nhập tài khoản Giáo viên.");
-                    this.Hide();
-
-                    break;
-                case "3":
-                    //static_login = true;
-                    Login_action.Text = "Đang chuyển vào màn hình chính...";
-                    MessageBox.Show("Bạn đăng nhập tài khoản Phòng Đào tạo.");
-
-                    this.Close();
-                    break;
-                case "4":
-                    //static_login = true;
-                    Login_action.Text = "Đang chuyển vào màn hình chính...";
-                    MessageBox.Show("Bạn đăng nhập tài khoản phòng Khảo thí.");
-
-                    this.Close();
                     break;
                 case "5":
                     //static_login = false;

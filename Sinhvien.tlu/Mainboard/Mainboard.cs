@@ -33,12 +33,48 @@ namespace Sinhvien.tlu.Mainboard
 
             Application.Exit();
         }
+
         public System_Main(Stream current_stream)
         {
             stream = current_stream;
             getInformation();
 
             InitializeComponent();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Main_Dashboard.SelectedIndex = 13;
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Main_Dashboard.SelectedIndex = 14;
+        }
+
+        private void Trangchu_button_Click(object sender, EventArgs e)
+        {
+            Main_Dashboard.SelectedIndex = 0;
+        }
+
+        private void Dangkyhocmoi_button_Click(object sender, EventArgs e)
+        {
+            Main_Dashboard.SelectedIndex = 1;
+        }
+
+        private void Ketquadangkyhoc_button_Click(object sender, EventArgs e)
+        {
+            Main_Dashboard.SelectedIndex = 2;
+        }
+
+        private void Tracuudiemtonghop_button_Click(object sender, EventArgs e)
+        {
+            Main_Dashboard.SelectedIndex = 3;
         }
     }
 }

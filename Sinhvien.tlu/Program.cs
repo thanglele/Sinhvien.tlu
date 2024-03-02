@@ -19,11 +19,8 @@ namespace Sinhvien.tlu
 
         static ASCIIEncoding encoding = new ASCIIEncoding();
 
-        [STAThread]
-        static public void Main()
+        static void Active_Runner()
         {
-            ApplicationConfiguration.Initialize();
-
             try
             {
                 TcpClient client = new TcpClient();
@@ -45,6 +42,14 @@ namespace Sinhvien.tlu
             {
                 MessageBox.Show("Mất kết nối với Internet, kiểm tra lại kết nối và khởi động lại phần mềm.");
             }
+        }
+
+        [STAThread]
+        static public void Main()
+        {
+            ApplicationConfiguration.Initialize();
+
+            Active_Runner();
         }
     }
 }
